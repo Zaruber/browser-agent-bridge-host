@@ -115,7 +115,7 @@ install_app() {
   step "Ставлю зависимости"
   NPM="$(dirname "$NODE")/npm"
   [ -x "$NPM" ] || NPM=$(command -v npm)
-  (cd "$APP.new" && PATH="$(dirname "$NODE"):$PATH" "$NPM" install --omit=dev --no-audit --no-fund --loglevel=error >/dev/null) \
+  (cd "$APP.new" && PATH="$(dirname "$NODE"):$PATH" NPM_CONFIG_UPDATE_NOTIFIER=false "$NPM" install --omit=dev --no-audit --no-fund --loglevel=error >/dev/null) \
     || die "npm install не удался."
   rm -rf "$APP.old"
   [ -d "$APP" ] && mv "$APP" "$APP.old"
