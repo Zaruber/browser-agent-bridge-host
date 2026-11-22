@@ -1,0 +1,26 @@
+{
+  "name": "browser-agent-bridge",
+  "version": "0.3.3",
+  "description": "MCP server that lets terminal agents control Chrome through the Browser Agent extension",
+  "type": "module",
+  "bin": {
+    "browser-agent-bridge": "setup.js",
+    "browser-agent-mcp": "index.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.20.0",
+    "zod": "^3.25.0"
+  },
+  "files": [
+    "index.js",
+    "native-host.js",
+    "setup.js"
+  ],
+  "scripts": {
+    "setup": "node setup.js setup",
+    "status": "node setup.js status"
+  }
+}
